@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-signals/iron-signals.html">
+<link rel="import" href="../polymerfire/firebase-document.html">
+
+<dom-module id="page-operator">
+    <template>
+        <iron-signals on-iron-signal-page-operation="_handlePageOperation"></iron-signals>
+        <firebase-document>
+        </firebase-document>
+    </template>
+    <script>
+        Polymer({
+            is: 'page-operator',
+
+            properties: {
+                name: {
+                    type: String,
+                    notify: true,
+                    reflectToAttribute: true
+                }
+            },
+
+            _handlePageOperation: function(e, detail) {
+                if(detail.operation == 'save') {
+                    this._saveDataInFirebase({
+                        path: '/approvals/pages/' + this.name + detail.path + '/content/' + detail.contentnode,
+                        value: detail.value
+                    })
+                }
+            },
+
+            _saveDataInFirebase: function(data) {
+                var firebaseEl = this.$$('firebase-document');
+
+                firebaseEl.setStoredValue(data.path, data.value);
+            }
+        });
+    </script>
+</dom-module>

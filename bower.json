@@ -1,0 +1,22 @@
+{
+  "name": "page-operator",
+  "homepage": "https://github.com/Pancake-CMS/page-operator",
+  "authors": [
+    "Prateek Jadhwani <prateekjadhwani@users.noreply.github.com>"
+  ],
+  "description": "A web component that lets users save the contents of a page to an approval node",
+  "main": "page-operator.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "^1.7.0",
+    "iron-signals": "PolymerElements/iron-signals#^1.0.3",
+    "polymerfire": "firebase/polymerfire#^0.9.7"
+  }
+}
