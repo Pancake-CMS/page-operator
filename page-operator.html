@@ -17,13 +17,19 @@
                     type: String,
                     notify: true,
                     reflectToAttribute: true
+                },
+
+                locale: {
+                    type: String,
+                    notify: true,
+                    reflectToAttribute: true
                 }
             },
 
             _handlePageOperation: function(e, detail) {
                 if(detail.operation == 'save') {
                     this._saveDataInFirebase({
-                        path: '/approvals/pages/' + this.name + detail.path + '/content/' + detail.contentnode,
+                        path: '/approvals/pages/' + this.locale + '/' + this.name + detail.path + '/content/' + detail.contentnode,
                         value: detail.value
                     })
                 }

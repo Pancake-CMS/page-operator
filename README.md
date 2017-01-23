@@ -13,3 +13,4 @@ bower install --save pancake-cms-page-operator
 | name | description | type | example value |
 |------|-------------|------|---------------|
 | name | The name of the page where operation needs to be performed | String | `pagename` |
+| locale | The locale of the page where operation needs to be performed | String | `en-US` |
