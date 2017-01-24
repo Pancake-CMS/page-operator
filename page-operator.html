@@ -29,7 +29,7 @@
             _handlePageOperation: function(e, detail) {
                 if(detail.operation == 'save') {
                     this._saveDataInFirebase({
-                        path: '/approvals/pages/' + this.locale + '/' + this.name + '/components' + detail.path + '/content/' + detail.contentnode,
+                        path: '/approvals/pages/' + this.locale + '/' + this.name + '/components' + detail.path + '/usercontent/' + detail.contentnode,
                         value: detail.value
                     })
                 }
